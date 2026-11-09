@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Josiah Arun | ECE Engineer · Robotics, VLSI, Embedded Systems &amp; AI</title>
+    <meta
+      name="description"
+      content="Josiah Arun is an Electronics and Communication Engineering student at SRM IST, Chennai, building across hardware and software in robotics, computer architecture, VLSI, embedded systems and AI."
+    />
+    <meta name="author" content="Josiah Arun" />
+    <meta name="theme-color" content="#05060f" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="%SITE_URL%/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Josiah Arun" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:title" content="Josiah Arun | An engineer by curiosity. A builder by instinct." />
+    <meta
+      property="og:description"
+      content="ECE student at SRM IST, Chennai, building across hardware and software in robotics, computer architecture, VLSI, embedded systems and AI."
+    />
+    <meta property="og:image" content="%SITE_URL%/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Josiah Arun: An engineer by curiosity. A builder by instinct." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Josiah Arun",
+        "url": "%SITE_URL%/",
+        "image": "%SITE_URL%/images/josiah-arun.jpg",
+        "jobTitle": "Electronics and Communication Engineering Student",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "SRM Institute of Science and Technology" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN" },
+        "knowsAbout": ["Robotics", "Computer Architecture", "VLSI", "Embedded Systems", "Artificial Intelligence"],
+        "sameAs": ["https://github.com/Josiah-27", "https://www.linkedin.com/in/josiah-arun-283782385/"]
+      }
+    </script>
+
+    <script>
+      document.documentElement.classList.add('js');
+      // Safety net: if the main bundle fails to load, never leave the hero hidden.
+      setTimeout(function () { document.documentElement.classList.add('is-ready'); }, 3500);
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ NAVIGATION ============ -->
+    <header class="nav" id="nav">
+      <nav class="nav__pill glass" aria-label="Primary">
+        <a href="#top" class="nav__logo" aria-label="Josiah Arun, back to top">
+          <span class="nav__mono" aria-hidden="true">JA</span>
+          <span class="nav__name">Josiah Arun</span>
+        </a>
+
+        <div class="nav__links-wrap">
+          <span class="nav__blob" aria-hidden="true"></span>
+          <ul class="nav__links">
+            <li><a href="#about" data-nav>About</a></li>
+            <li><a href="#skills" data-nav>Skills</a></li>
+            <li><a href="#projects" data-nav>Projects</a></li>
+            <li><a href="#hardware" data-nav>Hardware</a></li>
+            <li><a href="#journey" data-nav>Journey</a></li>
+            <li><a href="#certificates" data-nav>Certificates</a></li>
+          </ul>
+        </div>
+
+        <div class="nav__actions">
+          <a href="#contact" class="lg-btn lg-btn--violet lg-btn--sm nav__cta">Contact</a>
+          <button
+            class="lg-btn lg-btn--clear lg-icon lg-icon--sm nav__burger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <span class="burger-lines" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav class="mobile-menu__panel glass" aria-label="Mobile">
+        <a class="mm-link" href="#about"><span>About</span><span class="mono">01</span></a>
+        <a class="mm-link" href="#skills"><span>Skills</span><span class="mono">02</span></a>
+        <a class="mm-link" href="#projects"><span>Projects</span><span class="mono">03</span></a>
+        <a class="mm-link" href="#hardware"><span>Hardware Lab</span><span class="mono">04</span></a>
+        <a class="mm-link" href="#journey"><span>Journey</span><span class="mono">05</span></a>
+        <a class="mm-link" href="#certificates"><span>Certificates</span><span class="mono">06</span></a>
+        <a class="mm-link" href="#contact"><span>Contact</span><span class="mono">07</span></a>
+        <div class="mobile-menu__social">
+          <a class="lg-btn lg-btn--violet" href="https://www.linkedin.com/in/josiah-arun-283782385/" target="_blank" rel="noopener noreferrer">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="lg-btn lg-btn--teal" href="https://github.com/Josiah-27" target="_blank" rel="noopener noreferrer">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top" data-section>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow glass-chip" data-hero><span class="pulse-dot" aria-hidden="true"></span>ECE @ SRM IST · Chennai, India</p>
+
+            <h1 class="hero__name">
+              <span class="sr-only">Josiah Arun</span>
+              <span class="hero__line" aria-hidden="true" data-split-chars>Josiah</span>
+              <span class="hero__line" aria-hidden="true" data-split-chars data-grad="#c4b5fd,#5eead4">Arun</span>
+            </h1>
+
+            <p class="hero__tagline" data-hero>
+              An engineer by <span class="hl hl--violet">curiosity</span>.<br />
+              A builder by <span class="hl hl--teal">instinct</span>.
+            </p>
+
+            <p class="hero__lede" data-hero>
+              I'm an ECE student exploring the frontiers of robotics, computing, electronics, and AI. I build across hardware and
+              software, driven by a fascination with how things work and the ambition to engineer what comes next.
+            </p>
+
+            <div class="hero__ctas">
+              <a class="lg-btn lg-btn--violet" href="#projects" data-hero-btn>
+                Explore my work
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="lg-btn lg-btn--teal" href="#contact" data-hero-btn>Get in touch</a>
+              <a class="lg-btn lg-btn--clear lg-icon" href="https://github.com/Josiah-27" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" data-hero-btn>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+              <a class="lg-btn lg-btn--clear lg-icon" href="https://www.linkedin.com/in/josiah-arun-283782385/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" data-hero-btn>
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </div>
+
+            <p class="hero__exploring" data-hero>
+              <span class="mono">Currently exploring</span>
+              <span class="rotator" aria-hidden="true">
+                <span>Robotics</span><span>Computer Architecture</span><span>VLSI</span><span>Embedded Systems</span><span>Artificial Intelligence</span>
+              </span>
+              <span class="sr-only">Robotics, computer architecture, VLSI, embedded systems and artificial intelligence</span>
+            </p>
+          </div>
+
+          <div class="hero__visual" aria-hidden="true">
+            <span class="float-tag glass" style="--tx: 4%; --ty: 12%; --d: 5.5s">
+              <svg viewBox="0 0 24 24"><path d="M2 12h3l2-6 3 12 3-9 2 3h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Sensor fusion · EKF
+            </span>
+            <span class="float-tag glass" style="--tx: 64%; --ty: 4%; --d: 6.5s">
+              <svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></g></svg>
+              74LS192
+            </span>
+            <span class="float-tag glass" style="--tx: 0%; --ty: 80%; --d: 7.5s">
+              <svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></g></svg>
+              Optical flow
+            </span>
+            <span class="float-tag glass" style="--tx: 60%; --ty: 88%; --d: 6s">
+              <svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Kotlin · Python · TS
+            </span>
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-cue" aria-label="Scroll to the About section">
+          <span class="scroll-cue__mouse" aria-hidden="true"></span>
+          <span aria-hidden="true">Scroll</span>
+        </a>
+      </section>
+
+      <!-- ============ MARQUEE ============ -->
+      <div class="marquee-band" aria-hidden="true">
+        <div class="marquee marquee--a" data-marquee="left">
+          <div class="marquee__track">
+            <div class="marquee__group">
+              <span class="marquee__item">Robotics</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item marquee__item--o">Computer Architecture</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item">VLSI</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item marquee__item--o">Embedded Systems</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item">Artificial Intelligence</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="marquee marquee--b" data-marquee="right">
+          <div class="marquee__track">
+            <div class="marquee__group">
+              <span class="marquee__item marquee__item--o">Hardware</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item">Software</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item marquee__item--o">Sensors</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item">Silicon</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item marquee__item--o">Systems</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+              <span class="marquee__item">Build</span><svg class="marquee__star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section about" id="about" data-section>
+        <div class="bg-word" aria-hidden="true" data-bgword>Curiosity · Builder · Curiosity · Builder ·</div>
+        <div class="container">
+          <header class="sec-head">
+            <p class="sec-label" data-reveal-text>01 — About</p>
+            <h2 class="sec-title" data-split-words>Building technology <span class="grad">from the ground&nbsp;up</span></h2>
+          </header>
+
+          <div class="about__grid">
+            <figure class="about__photo" data-tilt="7">
+              <div class="about__frame glass" data-reveal>
+                <img
+                  src="/images/josiah-arun.webp"
+                  alt="Josiah Arun standing with his arms crossed on the SRM IST campus in Chennai"
+                  width="640"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <figcaption class="photo-badge photo-badge--a glass" data-reveal>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></g></svg>
+                <span><small>B.Tech · ECE</small>SRM IST, Chennai</span>
+              </figcaption>
+              <span class="photo-badge photo-badge--b glass" data-reveal>
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>Chennai, India</span>
+              </span>
+            </figure>
+
+            <div class="about__text">
+              <p class="about__lead" data-reveal-text>
+                I'm Josiah Arun, an Electronics and Communication Engineering student at SRM IST, Chennai, passionate about building
+                technology from the ground up.
+              </p>
+              <p data-reveal-text>
+                My interests span robotics, computer architecture, VLSI, embedded systems, and AI. I enjoy exploring the intersection
+                of hardware and software, turning ideas into working systems, and understanding the engineering principles behind
+                every component I build.
+              </p>
+              <p data-reveal-text>
+                My goal is to push beyond conventional boundaries and create technology that makes a meaningful difference.
+              </p>
+
+              <div class="facts">
+                <div class="fact glass" data-reveal data-glow>
+                  <span class="fact__k">Education</span>
+                  <span class="fact__v">B.Tech, Electronics &amp; Communication Engineering</span>
+                  <span class="fact__s">SRM Institute of Science and Technology</span>
+                </div>
+                <div class="fact glass" data-reveal data-glow>
+                  <span class="fact__k">Based in</span>
+                  <span class="fact__v">Chennai, India</span>
+                  <span class="fact__s">Open to projects, hackathons &amp; collaborations</span>
+                </div>
+                <div class="fact glass" data-reveal data-glow>
+                  <span class="fact__k">Languages</span>
+                  <span class="fact__v">English · Hindi · German</span>
+                  <span class="fact__s">Cambridge B1 · Prathamic (First Class) · A1</span>
+                </div>
+                <div class="fact glass" data-reveal data-glow>
+                  <span class="fact__k">Beyond engineering</span>
+                  <span class="fact__v">Drummer</span>
+                  <span class="fact__s">Trinity College London, Grade 3 Drum Kit</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="stats" role="list">
+            <li class="stat glass" data-reveal data-glow><strong data-count="5">5</strong><span>Projects across hardware &amp; software</span></li>
+            <li class="stat glass" data-reveal data-glow><strong data-count="3">3</strong><span>Hackathons</span></li>
+            <li class="stat glass" data-reveal data-glow><strong data-count="12">12</strong><span>Certificates earned</span></li>
+            <li class="stat glass" data-reveal data-glow><strong data-count="3">3</strong><span>Languages certified</span></li>
+          </ul>
+
+          <div class="focus">
+            <div class="focus__head">
+              <h3 class="focus__title" data-reveal-text>What I'm exploring</h3>
+              <p class="focus__note mono" data-reveal-text>Five fields, one goal: understand it, then build it.</p>
+            </div>
+            <div class="focus__grid" id="focus-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section class="section skills" id="skills" data-section>
+        <div class="container">
+          <header class="sec-head">
+            <p class="sec-label" data-reveal-text>02 — Skills</p>
+            <h2 class="sec-title" data-split-words>A toolbox from <span class="grad">silicon to&nbsp;software</span></h2>
+            <p class="sec-sub" data-reveal-text>
+              From logic gates on a breadboard to sensor-fusion filters and secure backends, these are the tools and techniques I've
+              used to build real systems.
+            </p>
+          </header>
+          <div class="skills__grid" id="skills-grid"></div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="section projects" id="projects" data-section>
+        <div class="bg-word" aria-hidden="true" data-bgword>Build · Test · Learn · Build · Test · Learn ·</div>
+        <div class="container">
+          <header class="sec-head">
+            <p class="sec-label" data-reveal-text>03 — Projects</p>
+            <h2 class="sec-title" data-split-words>Things I've <span class="grad">engineered</span></h2>
+            <p class="sec-sub" data-reveal-text>
+              Navigation without GPS, voice AI for neighbourhood shops, secure mental-health tech, a database engine written from
+              scratch and a room controller made purely of logic chips.
+            </p>
+          </header>
+          <div class="projects__grid" id="projects-grid"></div>
+          <div class="projects__more">
+            <a class="lg-btn lg-btn--clear" href="https://github.com/Josiah-27" target="_blank" rel="noopener noreferrer">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              See everything on GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HARDWARE LAB ============ -->
+      <section class="section hardware" id="hardware" data-section>
+        <div class="container">
+          <header class="sec-head">
+            <p class="sec-label" data-reveal-text>04 — Hardware Lab</p>
+            <h2 class="sec-title" data-split-words>Smart Room Automation, <span class="grad">built from pure&nbsp;logic</span></h2>
+            <p class="sec-sub" data-reveal-text>
+              A bidirectional people counter built from TTL logic chips, with no microcontroller. It counts people walking in and
+              out, shows the room's occupancy, and switches the light and fan for you. Try the live simulation, which runs the same
+              flip-flop logic as the real circuit.
+            </p>
+          </header>
+
+          <div class="hw__grid">
+            <figure class="hw__photo glass" data-reveal>
+              <div class="hw__photo-media">
+                <img
+                  src="/images/smart-room-board.webp"
+                  alt="The Smart Room Automation prototype: breadboards packed with TTL logic ICs, jumper wires, LDR sensors and a seven-segment display"
+                  width="1080"
+                  height="1440"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="hw__photo-tag chip">Working prototype</span>
+              </div>
+              <figcaption>
+                Four breadboards, two laser–LDR sensor pairs and standard 74LS-series ICs, all on a 5&nbsp;V supply.
+              </figcaption>
+            </figure>
+
+            <div class="sim glass" id="sim" data-reveal>
+              <div class="sim__head">
+                <span class="sim__live"><i aria-hidden="true"></i>Live logic simulation</span>
+                <span class="sim__chipname mono">74LS74 → 74LS192 → 74LS47</span>
+              </div>
+
+              <div class="sim__stage">
+                <div class="sim__door">
+                  <svg viewBox="0 0 400 200" role="img" aria-label="Top-down view of the doorway. Laser beam A is on the outside, beam B on the inside.">
+                    <defs>
+                      <pattern id="sim-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(255,255,255,.12)" stroke-width="2" />
+                      </pattern>
+                      <radialGradient id="sim-person-g">
+                        <stop offset="0" stop-color="#ddd6fe" />
+                        <stop offset="1" stop-color="#7c3aed" />
+                      </radialGradient>
+                    </defs>
+                    <text class="zone" x="80" y="22" text-anchor="middle">OUTSIDE</text>
+                    <text class="zone" x="320" y="22" text-anchor="middle">INSIDE · ROOM</text>
+                    <path class="floor-arrow" d="M44 184 H116 M108 178 L116 184 L108 190" />
+                    <text class="hint" x="80" y="172" text-anchor="middle">entry</text>
+                    <path class="floor-arrow" d="M356 184 H284 M292 178 L284 184 L292 190" />
+                    <text class="hint" x="320" y="172" text-anchor="middle">exit</text>
+
+                    <rect x="160" y="0" width="80" height="56" fill="url(#sim-hatch)" stroke="rgba(255,255,255,.2)" />
+                    <rect x="160" y="144" width="80" height="56" fill="url(#sim-hatch)" stroke="rgba(255,255,255,.2)" />
+
+                    <rect class="laser" x="172" y="48" width="12" height="9" rx="2" />
+                    <rect class="laser" x="216" y="48" width="12" height="9" rx="2" />
+                    <line id="beam-a" class="beam" x1="178" y1="58" x2="178" y2="142" />
+                    <line id="beam-b" class="beam" x1="222" y1="58" x2="222" y2="142" />
+                    <circle class="ldr" id="ldr-a" cx="178" cy="148" r="5" />
+                    <circle class="ldr" id="ldr-b" cx="222" cy="148" r="5" />
+                    <text class="beam-label" x="178" y="176" text-anchor="middle">A</text>
+                    <text class="beam-label" x="222" y="176" text-anchor="middle">B</text>
+
+                    <g id="sim-person" transform="translate(40 0)" opacity="0">
+                      <circle cx="0" cy="100" r="26" fill="url(#sim-person-g)" opacity=".85" />
+                      <circle cx="0" cy="100" r="11" fill="#f5f3ff" />
+                    </g>
+                  </svg>
+                  <div class="sim__beams mono">
+                    <span>Beam A <b id="stat-a">CLEAR</b></span>
+                    <span>Beam B <b id="stat-b">CLEAR</b></span>
+                    <span>Pulse <b id="stat-pulse">—</b></span>
+                  </div>
+                </div>
+
+                <div class="sim__outputs">
+                  <div class="seg-display">
+                    <svg class="seg7" viewBox="0 0 72 108" aria-hidden="true">
+                      <g transform="skewX(-6) translate(12 0)">
+                        <rect class="seg7__s" data-seg="a" x="14" y="4" width="32" height="8" rx="4" />
+                        <rect class="seg7__s" data-seg="b" x="47" y="12" width="8" height="38" rx="4" />
+                        <rect class="seg7__s" data-seg="c" x="47" y="58" width="8" height="38" rx="4" />
+                        <rect class="seg7__s" data-seg="d" x="14" y="96" width="32" height="8" rx="4" />
+                        <rect class="seg7__s" data-seg="e" x="5" y="58" width="8" height="38" rx="4" />
+                        <rect class="seg7__s" data-seg="f" x="5" y="12" width="8" height="38" rx="4" />
+                        <rect class="seg7__s" data-seg="g" x="14" y="50" width="32" height="8" rx="4" />
+                      </g>
+                    </svg>
+                    <div class="seg-display__info">
+                      <span class="seg-display__k mono">Occupancy</span>
+                      <span class="seg-display__v" id="sim-count" aria-live="polite">0 people</span>
+                      <span class="bcd" aria-label="BCD outputs Q3 to Q0">
+                        <span data-bit="3" title="Q3">0</span><span data-bit="2" title="Q2">0</span><span data-bit="1" title="Q1">0</span><span data-bit="0" title="Q0">0</span>
+                      </span>
+                      <span class="seg-display__z mono">Zero-detect <b id="sim-zero">LOW</b></span>
+                    </div>
+                  </div>
+
+                  <div class="loads">
+                    <div class="load" id="sim-light">
+                      <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <path class="bulb-glass" d="M24 5a13 13 0 0 0-7.5 23.6c1.6 1.2 2.5 3 2.5 5V35h10v-1.4c0-2 .9-3.8 2.5-5A13 13 0 0 0 24 5z" />
+                        <path d="M19 39h10M20.5 43h7" stroke="rgba(255,255,255,.55)" stroke-width="2.4" stroke-linecap="round" fill="none" />
+                      </svg>
+                      <span class="load__label">Light</span>
+                      <span class="load__state">OFF</span>
+                    </div>
+                    <div class="load" id="sim-fan">
+                      <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <circle cx="24" cy="24" r="21" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2" />
+                        <g class="fan-rotor">
+                          <path d="M24 24c-1-6 1-14 6-15 4 1 3 8-6 15z" />
+                          <path d="M24 24c6-1 14 1 15 6-1 4-8 3-15-6z" />
+                          <path d="M24 24c1 6-1 14-6 15-4-1-3-8 6-15z" />
+                          <path d="M24 24c-6 1-14-1-15-6 1-4 8-3 15 6z" />
+                          <circle cx="24" cy="24" r="3.4" />
+                        </g>
+                      </svg>
+                      <span class="load__label">Fan</span>
+                      <span class="load__state">OFF</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim__controls">
+                <button class="lg-btn lg-btn--violet" type="button" id="sim-enter">
+                  Person enters
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="lg-btn lg-btn--teal" type="button" id="sim-exit">
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Person exits
+                </button>
+                <button class="lg-btn lg-btn--clear lg-icon" type="button" id="sim-reset" aria-label="Clear the counter">
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <p class="sim__log" id="sim-log" aria-live="polite">Room empty: light and fan are OFF. Press “Person enters” to walk through the beams.</p>
+            </div>
+          </div>
+
+          <ol class="pipeline" role="list">
+            <li class="stage glass" data-reveal data-glow>
+              <span class="stage__n mono">Stage 01</span>
+              <h3>Sensing</h3>
+              <p>Two 650&nbsp;nm laser beams fall on two LDRs. When a person blocks a beam, the LDR's resistance jumps and a BC547 switch outputs a clean TTL signal.</p>
+              <span class="chip">Laser + LDR + BC547</span>
+            </li>
+            <li class="stage glass" data-reveal data-glow>
+              <span class="stage__n mono">Stage 02</span>
+              <h3>Direction detection</h3>
+              <p>The beams sit closer together than a person is wide. Flip-flops capture which beam broke first: A then B is an entry, B then A is an exit.</p>
+              <span class="chip">74LS74 + 74LS08</span>
+            </li>
+            <li class="stage glass" data-reveal data-glow>
+              <span class="stage__n mono">Stage 03</span>
+              <h3>Counting &amp; display</h3>
+              <p>Entry pulses drive the UP input and exit pulses the DOWN input of a BCD counter. A decoder shows the count on a seven-segment display.</p>
+              <span class="chip">74LS192 + 74LS47</span>
+            </li>
+            <li class="stage glass" data-reveal data-glow>
+              <span class="stage__n mono">Stage 04</span>
+              <h3>Zero detection</h3>
+              <p>The counter outputs Q0–Q3 are ORed together. The result is HIGH whenever at least one person is inside the room.</p>
+              <span class="chip">74LS32</span>
+            </li>
+            <li class="stage glass" data-reveal data-glow>
+              <span class="stage__n mono">Stage 05</span>
+              <h3>Load control</h3>
+              <p>The zero-detect signal switches the light and fan. A weighted resistor network raises the fan's drive voltage as the count rises.</p>
+              <span class="chip">Weighted R + driver</span>
+            </li>
+          </ol>
+
+          <div class="hw__details">
+            <div class="hw-card glass" data-reveal data-glow>
+              <h3>Occupancy logic</h3>
+              <table class="occ-table">
+                <thead>
+                  <tr><th scope="col">People</th><th scope="col">Light</th><th scope="col">Fan</th><th scope="col">Speed</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>0</td><td class="off">OFF</td><td class="off">OFF</td><td class="off">—</td></tr>
+                  <tr><td>1 – 3</td><td class="on">ON</td><td class="on">ON</td><td><span class="speed" aria-label="Low"><i class="f"></i><i></i><i></i></span> Low</td></tr>
+                  <tr><td>4 – 6</td><td class="on">ON</td><td class="on">ON</td><td><span class="speed" aria-label="Medium"><i class="f"></i><i class="f"></i><i></i></span> Medium</td></tr>
+                  <tr><td>7 – 9</td><td class="on">ON</td><td class="on">ON</td><td><span class="speed" aria-label="High"><i class="f"></i><i class="f"></i><i class="f"></i></span> High</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="hw-card glass" data-reveal data-glow>
+              <h3>Bill of materials</h3>
+              <ul class="chip-list" role="list">
+                <li class="chip">74LS74 dual D flip-flop</li>
+                <li class="chip">74LS08 AND</li>
+                <li class="chip">74LS32 OR</li>
+                <li class="chip">74LS192 up/down counter</li>
+                <li class="chip">74LS47 BCD decoder</li>
+                <li class="chip">3× BC547</li>
+                <li class="chip">2× 650 nm laser</li>
+                <li class="chip">2× LDR</li>
+                <li class="chip">7-segment (CA)</li>
+                <li class="chip">5 V DC fan</li>
+                <li class="chip">4 breadboards</li>
+              </ul>
+            </div>
+            <div class="hw-card glass" data-reveal data-glow>
+              <h3>Results &amp; next steps</h3>
+              <p>
+                Tested by walking through the beams in both directions: entries add one, exits subtract one, and the loads switch
+                off the moment the last person leaves.
+              </p>
+              <p>
+                Strong ambient light on the LDRs and two people crossing side by side are the main sources of error. One 74LS192
+                counts 0–9; cascading counters extends the range, and relays would let the circuit drive mains appliances.
+              </p>
+              <p class="hw-card__meta mono">Devices &amp; Digital IC Lab · SRM IST · 2026</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ JOURNEY ============ -->
+      <section class="section journey" id="journey" data-section>
+        <div class="container">
+          <header class="sec-head">
+            <p class="sec-label" data-reveal-text>05 — Journey</p>
+            <h2 class="sec-title" data-split-words>Milestones <span class="grad">so far</span></h2>
+            <p class="sec-sub" data-reveal-text>Hackathons, bootcamps, courses and the projects in between.</p>
+          </header>
+          <div class="timeline">
+            <div class="timeline__rail" aria-hidden="true"><span class="timeline__progress"></span></div>
+            <ol class="timeline__list" id="timeline" role="list"></ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CERTIFICATES ============ -->
+      <section class="section certs" id="certificates" data-section>
+        <div class="container">
+          <header class="sec-head">
+            <p class="sec-label" data-reveal-text>06 — Certificates</p>
+            <h2 class="sec-title" data-split-words>Proof of <span class="grad">curiosity</span></h2>
+            <p class="sec-sub" data-reveal-text>Hackathons, bootcamps, courses, languages and music. Select any certificate to view it full size.</p>
+          </header>
+
+          <div class="certs__bar">
+            <div class="seg-control glass" role="group" aria-label="Filter certificates">
+              <span class="seg-control__thumb" aria-hidden="true"></span>
+              <button type="button" data-filter="all" aria-pressed="true">All <span class="count mono">12</span></button>
+              <button type="button" data-filter="tech" aria-pressed="false">Tech &amp; Hackathons <span class="count mono">6</span></button>
+              <button type="button" data-filter="lang" aria-pressed="false">Languages <span class="count mono">3</span></button>
+              <button type="button" data-filter="music" aria-pressed="false">Music <span class="count mono">3</span></button>
+            </div>
+          </div>
+
+          <div class="cert-grid" id="cert-grid"></div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section contact" id="contact" data-section>
+        <div class="container">
+          <div class="contact__card glass" data-glow>
+            <span class="contact__orb contact__orb--a" aria-hidden="true"></span>
+            <span class="contact__orb contact__orb--b" aria-hidden="true"></span>
+            <p class="sec-label">07 — Contact</p>
+            <h2 class="contact__title" data-split-words>Let's build <span class="grad">what comes&nbsp;next.</span></h2>
+            <p class="contact__text">
+              Robotics, hardware design, embedded systems or AI: if you're building something interesting, I'd love to hear about
+              it. Reach out for projects, hackathon teams or collaborations.
+            </p>
+            <div class="contact__actions">
+              <a class="lg-btn lg-btn--violet lg-btn--lg" href="https://www.linkedin.com/in/josiah-arun-283782385/" target="_blank" rel="noopener noreferrer">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                Connect on LinkedIn
+              </a>
+              <a class="lg-btn lg-btn--teal lg-btn--lg" href="https://github.com/Josiah-27" target="_blank" rel="noopener noreferrer">
+                <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Follow on GitHub
+              </a>
+            </div>
+            <ul class="contact__meta" role="list">
+              <li class="chip">linkedin.com/in/josiah-arun-283782385</li>
+              <li class="chip">github.com/Josiah-27</li>
+              <li class="chip">Chennai, India</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year">2026</span> Josiah Arun. Designed and built from the ground up.</p>
+        <div class="footer__right">
+          <button class="switch" type="button" role="switch" aria-checked="true" id="toggle-3d">
+            <span class="switch__track" aria-hidden="true"><span class="switch__thumb"></span></span>
+            <span class="switch__label">3D background</span>
+          </button>
+          <a href="#top" class="lg-btn lg-btn--clear lg-icon" aria-label="Back to top">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ DIALOGS ============ -->
+    <dialog class="dialog" id="case-dialog" aria-labelledby="case-title">
+      <div class="dialog__panel glass">
+        <button class="lg-btn lg-btn--clear lg-icon dialog__close" type="button" data-close aria-label="Close case study">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="dialog__scroll" id="case-body"></div>
+      </div>
+    </dialog>
+
+    <dialog class="dialog dialog--cert" id="cert-dialog" aria-labelledby="cert-title">
+      <div class="dialog__panel glass">
+        <button class="lg-btn lg-btn--clear lg-icon dialog__close" type="button" data-close aria-label="Close certificate">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="dialog__scroll">
+          <figure class="lightbox">
+            <div class="lightbox__media"><img id="cert-img" alt="" /></div>
+            <figcaption class="lightbox__meta">
+              <span class="lightbox__cat mono" id="cert-cat"></span>
+              <h3 class="lightbox__title" id="cert-title"></h3>
+              <p class="lightbox__issuer" id="cert-issuer"></p>
+              <p class="lightbox__note" id="cert-note"></p>
+              <div class="lightbox__nav">
+                <button class="lg-btn lg-btn--clear lg-icon" type="button" id="cert-prev" aria-label="Previous certificate">
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="lg-btn lg-btn--clear lg-icon" type="button" id="cert-next" aria-label="Next certificate">
+                  <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <a class="lg-btn lg-btn--clear lg-btn--sm" id="cert-open" href="#" target="_blank" rel="noopener">Open full size</a>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">This portfolio uses JavaScript for its 3D scene and project gallery. Find Josiah's work on
+        <a href="https://github.com/Josiah-27">GitHub</a> and <a href="https://www.linkedin.com/in/josiah-arun-283782385/">LinkedIn</a>.</p>
+    </noscript>
+  </body>
+</html>
