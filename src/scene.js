@@ -53,14 +53,14 @@ const RING_TEXT = 'ROBOTICS  •  COMPUTER ARCHITECTURE  •  VLSI  •  EMBEDDE
 /* Where the core sits for each section.
    d = desktop, m = narrow screens: [screenX 0..1, screenY 0..1, ring diameter as a fraction of the smaller viewport side] */
 const SECTIONS = {
-  top: { d: [0.73, 0.5, 0.82], m: [0.5, 0.9, 0.92], amp: 0.22, colors: ['#7c3aed', '#14b8a6', '#f0abfc'] },
-  about: { d: [0.18, 0.4, 0.62], m: [0.5, 0.22, 0.8], amp: 0.3, colors: ['#db2777', '#7c3aed', '#fde68a'] },
-  skills: { d: [0.5, 0.42, 0.7], m: [0.5, 0.5, 0.85], amp: 0.34, colors: ['#0ea5e9', '#14b8a6', '#c4b5fd'] },
-  projects: { d: [0.84, 0.55, 0.62], m: [0.5, 0.3, 0.8], amp: 0.26, colors: ['#7c3aed', '#ec4899', '#99f6e4'] },
-  hardware: { d: [0.84, 0.3, 0.5], m: [0.5, 0.25, 0.8], amp: 0.18, colors: ['#f59e0b', '#ef4444', '#fde68a'] },
-  journey: { d: [0.82, 0.5, 0.66], m: [0.5, 0.5, 0.8], amp: 0.3, colors: ['#14b8a6', '#6366f1', '#f0abfc'] },
-  certificates: { d: [0.16, 0.5, 0.6], m: [0.5, 0.3, 0.8], amp: 0.24, colors: ['#8b5cf6', '#22d3ee', '#fbcfe8'] },
-  contact: { d: [0.5, 0.48, 0.95], m: [0.5, 0.45, 1.0], amp: 0.34, colors: ['#7c3aed', '#14b8a6', '#f0abfc'] },
+  top: { d: [0.73, 0.5, 0.82], m: [0.5, 0.9, 0.92], amp: 0.22, colors: ['#8b5cf6', '#2dd4bf', '#f9a8d4'] },
+  about: { d: [0.18, 0.4, 0.62], m: [0.5, 0.22, 0.8], amp: 0.3, colors: ['#ec4899', '#a78bfa', '#fde68a'] },
+  skills: { d: [0.5, 0.42, 0.7], m: [0.5, 0.5, 0.85], amp: 0.34, colors: ['#60a5fa', '#2dd4bf', '#c4b5fd'] },
+  projects: { d: [0.84, 0.55, 0.62], m: [0.5, 0.3, 0.8], amp: 0.26, colors: ['#8b5cf6', '#f472b6', '#99f6e4'] },
+  hardware: { d: [0.84, 0.3, 0.5], m: [0.5, 0.25, 0.8], amp: 0.18, colors: ['#f59e0b', '#f472b6', '#fde68a'] },
+  journey: { d: [0.82, 0.5, 0.66], m: [0.5, 0.5, 0.8], amp: 0.3, colors: ['#2dd4bf', '#818cf8', '#f9a8d4'] },
+  certificates: { d: [0.16, 0.5, 0.6], m: [0.5, 0.3, 0.8], amp: 0.24, colors: ['#a78bfa', '#22d3ee', '#fbcfe8'] },
+  contact: { d: [0.5, 0.48, 0.95], m: [0.5, 0.45, 1.0], amp: 0.34, colors: ['#8b5cf6', '#2dd4bf', '#f9a8d4'] },
 };
 
 function glowTexture() {
@@ -157,13 +157,13 @@ function makeOcta(color) {
   g.add(
     new THREE.LineSegments(
       new THREE.EdgesGeometry(geo),
-      new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false })
+      new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.75, depthWrite: false })
     )
   );
   g.add(
     new THREE.Mesh(
       new THREE.OctahedronGeometry(0.3, 0),
-      new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false })
+      new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.18, depthWrite: false })
     )
   );
   return g;
@@ -278,10 +278,10 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
           float bands = 0.5 + 0.5 * sin(vNoise * 7.0 + uTime * 0.7);
           base = mix(base, uColC, bands * 0.28);
           vec3 L = normalize(vec3(0.45, 0.75, 0.55));
-          float diff = 0.38 + 0.62 * max(dot(N, L), 0.0);
+          float diff = 0.55 + 0.45 * max(dot(N, L), 0.0);
           vec3 H = normalize(L + V);
           float spec = pow(max(dot(N, H), 0.0), 56.0);
-          vec3 col = base * diff + vec3(spec) * 0.9 + fres * mix(uColC, vec3(1.0), 0.35) * 0.95;
+          vec3 col = base * diff + vec3(spec) * 0.8 + fres * uColC * 0.6;
           gl_FragColor = vec4(col, 1.0);
           #include <colorspace_fragment>
         }`,
@@ -292,7 +292,7 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
   const shellGeo = new THREE.IcosahedronGeometry(1.9, 1);
   const shell = new THREE.LineSegments(
     new THREE.EdgesGeometry(shellGeo),
-    new THREE.LineBasicMaterial({ color: '#5eead4', transparent: true, opacity: 0.3, depthWrite: false })
+    new THREE.LineBasicMaterial({ color: '#7c3aed', transparent: true, opacity: 0.22, depthWrite: false })
   );
   const nodePositions = [];
   const seen = new Set();
@@ -309,21 +309,21 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
     new THREE.Points(
       nodesGeo,
       new THREE.PointsMaterial({
-        size: 0.16,
+        size: 0.14,
         map: glow,
-        color: '#99f6e4',
+        color: '#7c3aed',
         transparent: true,
+        opacity: 0.7,
         depthWrite: false,
-        blending: THREE.AdditiveBlending,
       })
     )
   );
   core.add(shell);
 
   const orbits = [
-    { r: 2.25, tilt: [1.1, 0.3], speed: 0.9, color: '#a78bfa' },
-    { r: 2.45, tilt: [-0.5, -0.9], speed: -0.65, color: '#5eead4' },
-    { r: 2.05, tilt: [0.2, 1.3], speed: 1.15, color: '#f0abfc' },
+    { r: 2.25, tilt: [1.1, 0.3], speed: 0.9, color: '#7c3aed' },
+    { r: 2.45, tilt: [-0.5, -0.9], speed: -0.65, color: '#0d9488' },
+    { r: 2.05, tilt: [0.2, 1.3], speed: 1.15, color: '#db2777' },
   ].map((o, i) => {
     const group = new THREE.Group();
     group.rotation.set(o.tilt[0], 0, o.tilt[1]);
@@ -335,12 +335,12 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
     group.add(
       new THREE.Line(
         new THREE.BufferGeometry().setFromPoints(pts),
-        new THREE.LineBasicMaterial({ color: o.color, transparent: true, opacity: 0.32, depthWrite: false, blending: THREE.AdditiveBlending })
+        new THREE.LineBasicMaterial({ color: o.color, transparent: true, opacity: 0.26, depthWrite: false })
       )
     );
     const electron = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 16), new THREE.MeshBasicMaterial({ color: o.color }));
     const halo = new THREE.Sprite(
-      new THREE.SpriteMaterial({ map: glow, color: o.color, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })
+      new THREE.SpriteMaterial({ map: glow, color: o.color, transparent: true, opacity: 0.45, depthWrite: false })
     );
     halo.scale.setScalar(0.5);
     electron.add(halo);
@@ -355,11 +355,11 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
   ringGroup.rotation.set(0.32, 0, -0.16);
   const ringBack = new THREE.Mesh(
     ringGeo,
-    new THREE.MeshBasicMaterial({ map: ringTex, color: '#a5b4fc', transparent: true, opacity: 0.2, side: THREE.BackSide, depthWrite: false })
+    new THREE.MeshBasicMaterial({ map: ringTex, color: '#7c3aed', transparent: true, opacity: 0.14, side: THREE.BackSide, depthWrite: false })
   );
   const ringFront = new THREE.Mesh(
     ringGeo,
-    new THREE.MeshBasicMaterial({ map: ringTex, color: '#ede9fe', transparent: true, opacity: 0.95, side: THREE.FrontSide, depthWrite: false })
+    new THREE.MeshBasicMaterial({ map: ringTex, color: '#1e1b4b', transparent: true, opacity: 0.86, side: THREE.FrontSide, depthWrite: false })
   );
   ringBack.renderOrder = 1;
   ringFront.renderOrder = 3;
@@ -372,7 +372,7 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
   const col = new Float32Array(COUNT * 3);
   const size = new Float32Array(COUNT);
   const phase = new Float32Array(COUNT);
-  const palette = ['#a78bfa', '#5eead4', '#f0abfc', '#93c5fd', '#ffffff'].map((c) => new THREE.Color(c));
+  const palette = ['#8b5cf6', '#14b8a6', '#ec4899', '#60a5fa', '#a78bfa'].map((c) => new THREE.Color(c));
   for (let i = 0; i < COUNT; i++) {
     const r = 9 + Math.pow(Math.random(), 0.65) * 38;
     const th = Math.random() * Math.PI * 2;
@@ -399,7 +399,6 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
       uniforms: pUniforms,
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
       vertexShader: /* glsl */ `
         attribute float aSize;
         attribute float aPhase;
@@ -422,7 +421,7 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
           float d = length(gl_PointCoord - 0.5);
           float a = smoothstep(0.5, 0.0, d);
           a *= a;
-          gl_FragColor = vec4(vColor, a * vAlpha);
+          gl_FragColor = vec4(vColor, a * vAlpha * 0.55);
           #include <colorspace_fragment>
         }`,
     })
@@ -433,7 +432,7 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
   const floorUniforms = {
     uTime: { value: 0 },
     uTravel: { value: 0 },
-    uOpacity: { value: 0.75 },
+    uOpacity: { value: 0.55 },
     uColA: { value: new THREE.Color('#8b5cf6') },
     uColB: { value: new THREE.Color('#14b8a6') },
   };
@@ -443,7 +442,6 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
       uniforms: floorUniforms,
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
       vertexShader: /* glsl */ `
         varying vec3 vW;
         void main() {
@@ -488,13 +486,13 @@ export function initScene(canvas, { reduceMotion = false } = {}) {
   const TRAVEL = 30;
   const defs = [
     { type: 'chip', p: [10, 4.2, -8] },
-    { type: 'octa', p: [-10.4, -4.6, -8], c: '#a78bfa' },
+    { type: 'octa', p: [-10.4, -4.6, -8], c: '#7c3aed' },
     { type: 'torus', p: [-10, -7.5, -8] },
     { type: 'chip', p: [10.2, -10.5, -8] },
-    { type: 'octa', p: [-10.4, -14, -8], c: '#5eead4' },
+    { type: 'octa', p: [-10.4, -14, -8], c: '#0d9488' },
     { type: 'torus', p: [10, -17.5, -8] },
     { type: 'chip', p: [-10.2, -21, -8] },
-    { type: 'octa', p: [10.4, -24.5, -8], c: '#f0abfc' },
+    { type: 'octa', p: [10.4, -24.5, -8], c: '#db2777' },
     { type: 'torus', p: [-10, -28, -8] },
     { type: 'chip', p: [10.2, -31.5, -8] },
   ];

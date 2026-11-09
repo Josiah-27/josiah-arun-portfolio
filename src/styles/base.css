@@ -3,16 +3,16 @@
    ========================================================================== */
 
 :root {
-  --bg: #05060f;
-  --ink: #f4f5ff;
-  --ink-2: #c9cbe7;
-  --muted: #9599bd;
-  --violet: #8b5cf6;
-  --violet-2: #a78bfa;
-  --violet-3: #c4b5fd;
+  --bg: #f4f3fb;
+  --ink: #16152d;
+  --ink-2: #3e4064;
+  --muted: #676b8c;
+  --violet: #7c5cf0;
+  --violet-2: #8b5cf6;
+  --violet-3: #6d28d9;
   --teal: #14b8a6;
-  --teal-2: #5eead4;
-  --pink: #f472b6;
+  --teal-2: #0f766e;
+  --pink: #db2777;
   --amber: #fbbf24;
   --red: #ff5a5a;
 
@@ -38,10 +38,10 @@
 
 html {
   background: var(--bg);
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
   scroll-padding-top: 92px;
-  scrollbar-color: #33375e transparent;
+  scrollbar-color: #c9c4e6 transparent;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -174,9 +174,10 @@ ol[role='list'] {
   z-index: -4;
   pointer-events: none;
   background:
-    radial-gradient(70vmax 60vmax at 10% -10%, rgb(124 58 237 / 0.3), transparent 60%),
-    radial-gradient(60vmax 55vmax at 105% 35%, rgb(20 184 166 / 0.16), transparent 60%),
-    radial-gradient(70vmax 50vmax at 40% 115%, rgb(219 39 119 / 0.14), transparent 60%),
+    radial-gradient(60vmax 50vmax at 6% -6%, rgb(221 214 254 / 0.95), transparent 62%),
+    radial-gradient(55vmax 50vmax at 104% 28%, rgb(204 251 241 / 0.9), transparent 60%),
+    radial-gradient(60vmax 45vmax at 38% 112%, rgb(252 231 243 / 0.95), transparent 60%),
+    radial-gradient(40vmax 40vmax at 72% 78%, rgb(219 234 254 / 0.7), transparent 60%),
     var(--bg);
 }
 
@@ -202,7 +203,7 @@ ol[role='list'] {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background: radial-gradient(130% 95% at 50% 45%, transparent 55%, rgb(0 0 0 / 0.5));
+  background: radial-gradient(130% 95% at 50% 45%, transparent 62%, rgb(110 95 190 / 0.1));
 }
 
 .grain {
@@ -210,7 +211,7 @@ ol[role='list'] {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.045;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -282,7 +283,7 @@ ol[role='list'] {
 }
 
 .grad {
-  background: linear-gradient(100deg, var(--violet-2) 0%, var(--teal-2) 55%, var(--pink) 100%);
+  background: linear-gradient(100deg, #7c3aed 0%, #0d9488 55%, #db2777 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -313,7 +314,7 @@ ol[role='list'] {
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px rgb(255 255 255 / 0.065);
+  -webkit-text-stroke: 1px rgb(70 55 140 / 0.11);
   pointer-events: none;
   user-select: none;
 }
@@ -326,7 +327,7 @@ ol[role='list'] {
   z-index: 80;
   padding: 1rem 1.25rem;
   border-radius: 16px;
-  background: #15172b;
+  background: #fff;
   border: 1px solid rgb(255 255 255 / 0.15);
 }
 
