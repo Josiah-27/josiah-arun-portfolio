@@ -293,6 +293,58 @@ export const projects = [
     stack: ['74LS74', '74LS08', '74LS32', '74LS192', '74LS47', 'BC547', 'Laser + LDR'],
     links: [{ label: 'Try the live simulation', href: '#hardware', kind: 'internal' }],
   },
+  {
+    id: 'emt-simulations',
+    wide: true,
+    viz: 'smith',
+    badge: 'Coursework · LLT1',
+    c1: '59 130 246',
+    c2: '245 158 11',
+    kicker: 'Python · Electromagnetics · RF',
+    year: '2026',
+    title: 'EMT Simulations',
+    tagline: 'Electromagnetic theory and transmission lines, simulated from first principles in Python.',
+    summary:
+      'Five simulations for my Electromagnetic Theory course (21ECC205T), each built from the governing equations with NumPy and plotted with Matplotlib. They cover Gauss’s law, displacement current, lossy transmission lines, quarter-wave matching and a Smith chart drawn from scratch, and are presented together on one poster.',
+    highlights: [
+      'Gauss’s law checked by numerically integrating E · dA over spheres of four radii, with the same flux for each',
+      'A distortionless lossy line (R/L = G/C): α stays flat at 8.686 dB/m while β rises linearly with frequency',
+      'A λ/4 transformer matches 50 Ω to 100 Ω, and its VSWR is swept across frequency to show the narrow band',
+      'A Smith chart drawn from the Γ-plane mapping, which finds Γ, VSWR, return loss and the voltage maximum and minimum',
+    ],
+    stack: ['Python', 'NumPy', 'Matplotlib', 'Transmission lines', 'Smith chart', 'Impedance matching'],
+    links: [
+      { label: 'View code', href: `${GITHUB}/EMT-Simulations`, kind: 'github' },
+      { label: 'Poster (PDF)', href: '/emt/LLT1_Simulation_Poster.pdf', kind: 'file' },
+    ],
+    context: ['21ECC205T · Electromagnetic Theory and Interference', 'LLT1 simulation · Year II, Sem III', 'SRM IST · Dept. of ECE'],
+    caseStudy: [
+      {
+        h: 'The brief',
+        p: 'The LLT1 assessment asked for five Python simulations, one for each course outcome, from static fields to RF matching. Each one states an aim and a model, runs the numbers, and ends with an inference that explains what the result says about the physics.',
+      },
+      {
+        h: 'The five simulations',
+        steps: [
+          ['Gauss’s law', 'The field of a 1 nC charge is summed as <em>E · dA</em> over a 100 × 100 (θ, φ) grid on spheres of radius 0.5, 1, 2 and 5 m. Every radius gives 114.07 N·m²/C against the exact <em>Q/ε<sub>0</sub></em> = 112.94, a 1.00 % error from the grid. The flux depends only on the enclosed charge.'],
+          ['Displacement current', 'For <em>E(t) = E<sub>0</sub> sin ωt</em> between capacitor plates, <em>I<sub>d</sub> = ε<sub>0</sub>A dE/dt</em> peaks at 55.6 µA (1 kHz, 0.01 m²). Doubling either the frequency or the plate area doubles it to 111.3 µA, and the current leads the field by 90°.'],
+          ['Lossy transmission line', 'The line uses γ = √[(R + jωL)(G + jωC)] with R = 50 Ω/m, L = 250 nH/m, G = 0.02 S/m and C = 100 pF/m. Because R/L = G/C the line is distortionless: α = 8.686 dB/m at every frequency, while β = 31.42 rad/m at 1 GHz. Over 5 m it loses 43.4 dB and shifts phase by 9000°.'],
+          ['Quarter-wave transformer', 'Matching 50 Ω to 100 Ω needs <em>Z<sub>T</sub></em> = √(Z<sub>0</sub>Z<sub>L</sub>) = 70.71 Ω. At f<sub>0</sub> the VSWR is 1.0. It rises to 1.12 at ±10 %, 1.64 at ±50 % and 2.0 at 2f<sub>0</sub>, where the section acts as a λ/2 line, so this is a narrow-band match.'],
+          ['Smith chart', 'The chart is drawn by mapping constant-r and constant-x lines onto the Γ-plane. A 75 + j25 Ω load on a 50 Ω line at 1 GHz gives Γ = 0.277∠33.7°, VSWR 1.77 and 11.14 dB return loss. The first V<sub>max</sub> is 1.40 cm from the load and the first V<sub>min</sub> 8.90 cm, where a 37.6 Ω λ/4 section would give a perfect match.'],
+        ],
+      },
+    ],
+    gallery: [
+      { src: '/emt/poster.webp', thumb: '/emt/poster-thumb.webp', w: 2400, h: 1697, caption: 'LLT1 poster: all five simulations', wide: true },
+      { src: '/emt/p5_smith_chart_plot.webp', w: 1100, h: 1100, caption: '5 · Smith chart, 75 + j25 Ω load' },
+      { src: '/emt/p5_smith_chart_console.webp', w: 692, h: 448, caption: '5 · Smith chart results' },
+      { src: '/emt/p1_gauss_law_flux_console.webp', w: 726, h: 332, caption: '1 · Gauss’s law flux vs radius' },
+      { src: '/emt/p2_displacement_current_plot.webp', w: 1320, h: 1100, caption: '2 · Displacement current vs f and A' },
+      { src: '/emt/p3_lossy_transmission_line_plot.webp', w: 1540, h: 1100, caption: '3 · Lossy line: α, β, loss and phase' },
+      { src: '/emt/p4_quarter_wave_transformer_plot.webp', w: 1540, h: 1100, caption: '4 · λ/4 transformer: Zin, |Γ|, VSWR, RL' },
+      { src: '/emt/p4_quarter_wave_transformer_console.webp', w: 1113, h: 563, caption: '4 · λ/4 transformer sweep table' },
+    ],
+  },
 ];
 
 /* ---------- journey ---------- */

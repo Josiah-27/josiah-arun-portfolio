@@ -823,6 +823,12 @@
   margin: 10px 10px 10px 0;
 }
 
+/* wide cards mirror the featured layout: visual on the left */
+.project--wide .project__viz {
+  order: 0;
+  margin: 10px 0 10px 10px;
+}
+
 .project__badge {
   position: absolute;
   z-index: 2;
@@ -2050,6 +2056,54 @@
   margin-top: 1.8rem;
 }
 
+.case__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  align-items: start;
+  gap: 0.9rem;
+}
+
+.case__fig {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgb(128 98 244 / 0.14);
+  box-shadow: 0 10px 24px -18px rgb(70 55 140 / 0.45);
+}
+
+.case__fig--wide {
+  grid-column: 1 / -1;
+}
+
+.case__fig a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.case__fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.case__fig a:hover img {
+  transform: scale(1.025);
+}
+
+.case__fig a:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: -2px;
+}
+
+.case__fig figcaption {
+  padding: 0.6rem 0.8rem;
+  font: 500 0.74rem/1.4 var(--font-mono);
+  color: var(--muted);
+  border-top: 1px solid rgb(128 98 244 / 0.1);
+}
+
 .dialog--cert .dialog__panel {
   width: min(100%, 1180px);
 }
@@ -2195,7 +2249,8 @@
     flex-direction: column;
   }
 
-  .project--featured .project__viz {
+  .project--featured .project__viz,
+  .project--wide .project__viz {
     order: 0;
     aspect-ratio: 16 / 9;
     margin: 10px 10px 0;

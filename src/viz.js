@@ -130,4 +130,63 @@ const photo = () => `
   </div>
 </div>`;
 
-export const viz = { radar, voice, breathe, db, photo };
+// Smith chart for a 75 + j25 Ω load on a 50 Ω line (|Γ| = 0.277 ∠ 33.7°), drawn from the real geometry.
+const smith = () => {
+  const cx = 122;
+  const cy = 125;
+  const R = 98;
+  const f = (n) => n.toFixed(1);
+  let grid = '';
+  for (const r of [0.2, 0.5, 1, 2, 5]) {
+    grid += `<circle cx="${f(cx + (R * r) / (1 + r))}" cy="${cy}" r="${f(R / (1 + r))}" />`;
+  }
+  for (const x of [0.2, 0.5, 1, 2, 5]) {
+    grid += `<circle cx="${cx + R}" cy="${f(cy - R / x)}" r="${f(R / x)}" /><circle cx="${cx + R}" cy="${f(cy + R / x)}" r="${f(R / x)}" />`;
+  }
+  const g = 0.2774 * R;
+  const ang = (33.69 * Math.PI) / 180;
+  const lx = cx + g * Math.cos(ang);
+  const ly = cy - g * Math.sin(ang);
+  const rows = [
+    ['zL', '1.5 + j0.5'],
+    ['Γ', '0.277 ∠ 33.7°'],
+    ['VSWR', '1.77'],
+    ['RL', '11.14 dB'],
+    ['Vmin', '8.90 cm'],
+  ]
+    .map(
+      ([k, v], i) =>
+        `<text x="250" y="${86 + i * 22}" fill="rgba(226,232,255,.55)">${k}</text><text x="292" y="${86 + i * 22}" fill="#fff">${v}</text>`
+    )
+    .join('');
+  return `
+<div class="viz viz--smith">
+  <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs>
+      <clipPath id="sm-clip"><circle cx="${cx}" cy="${cy}" r="${R}" /></clipPath>
+    </defs>
+    <circle cx="${cx}" cy="${cy}" r="${R}" fill="rgba(255,255,255,.03)" stroke="rgba(226,232,255,.55)" stroke-width="1.4" />
+    <g clip-path="url(#sm-clip)" fill="none" stroke="rgba(147,197,253,.22)" stroke-width=".9">
+      ${grid}
+      <path d="M${cx - R} ${cy}H${cx + R}" />
+    </g>
+    <circle class="viz-dash" cx="${cx}" cy="${cy}" r="${f(g)}" fill="none" stroke="#f59e0b" stroke-width="1.8" />
+    <path d="M${cx} ${cy}L${f(lx)} ${f(ly)}" stroke="#60a5fa" stroke-width="1.6" />
+    <circle cx="${f(cx + g)}" cy="${cy}" r="4" fill="#22c55e" />
+    <circle cx="${f(cx - g)}" cy="${cy}" r="4" fill="#c084fc" />
+    <circle cx="${f(lx)}" cy="${f(ly)}" r="5" fill="#ef4444" />
+    <g class="viz-spin" style="transform-origin:${cx}px ${cy}px;animation-duration:9s">
+      <circle cx="${f(lx)}" cy="${f(ly)}" r="3.2" fill="#fde68a" />
+      <circle class="viz-pulse" cx="${f(lx)}" cy="${f(ly)}" r="4" fill="none" stroke="#fde68a" stroke-width="1.4" />
+    </g>
+    <g font-size="10" letter-spacing=".6">${rows}</g>
+    <g font-size="8.5" fill="rgba(226,232,255,.62)" letter-spacing="1.3">
+      <text x="250" y="52">ZL = 75 + j25 Ω · 1 GHz</text>
+      <text x="250" y="212">⟳ TOWARD GENERATOR</text>
+      <text x="14" y="240">5 SIMULATIONS · NUMPY + MATPLOTLIB</text>
+    </g>
+  </svg>
+</div>`;
+};
+
+export const viz = { radar, voice, breathe, db, photo, smith };

@@ -47,6 +47,8 @@ function renderSkills() {
     .join('');
 }
 
+const linkIcon = (l) => icon(l.kind === 'file' ? 'doc' : 'github');
+
 function projectActions(p) {
   const out = [];
   if (p.caseStudy) {
@@ -59,11 +61,28 @@ function projectActions(p) {
       out.push(`<a class="lg-btn lg-btn--violet lg-btn--sm" href="${l.href}">${esc(l.label)} ${icon('arrowRight')}</a>`);
     } else {
       out.push(
-        `<a class="lg-btn lg-btn--clear lg-btn--sm" href="${l.href}" target="_blank" rel="noopener noreferrer">${icon('github')} ${esc(l.label)}</a>`
+        `<a class="lg-btn lg-btn--clear lg-btn--sm" href="${l.href}" target="_blank" rel="noopener noreferrer">${linkIcon(l)} ${esc(l.label)}</a>`
       );
     }
   }
   return out.join('');
+}
+
+/** Image gallery for a case study (poster, plots, console output). Each figure opens full size. */
+function galleryHTML(p) {
+  if (!p.gallery) return '';
+  const figs = p.gallery
+    .map(
+      (g) => `
+      <figure class="case__fig${g.wide ? ' case__fig--wide' : ''}">
+        <a href="${g.src}" target="_blank" rel="noopener" aria-label="Open full size: ${esc(g.caption)}">
+          <img src="${g.thumb || g.src}" alt="${esc(g.caption)}" width="${g.w}" height="${g.h}" loading="lazy" decoding="async" />
+        </a>
+        <figcaption>${esc(g.caption)}</figcaption>
+      </figure>`
+    )
+    .join('');
+  return `<section class="case__sec"><h3>Poster &amp; program output</h3><div class="case__gallery">${figs}</div></section>`;
 }
 
 function renderProjects() {
@@ -73,8 +92,8 @@ function renderProjects() {
     .map((p, i) => {
       const idx = String(i + 1).padStart(2, '0');
       return `
-      <div class="project-slot${p.featured ? ' project-slot--featured' : ''}" data-reveal-3d>
-        <article class="project glass${p.featured ? ' project--featured' : ''}" id="project-${p.id}" data-glow style="--c1:${p.c1};--c2:${p.c2}" aria-labelledby="proj-title-${p.id}">
+      <div class="project-slot${p.featured || p.wide ? ' project-slot--featured' : ''}" data-reveal-3d>
+        <article class="project glass${p.featured ? ' project--featured' : ''}${p.wide ? ' project--featured project--wide' : ''}" id="project-${p.id}" data-glow style="--c1:${p.c1};--c2:${p.c2}" aria-labelledby="proj-title-${p.id}">
           <div class="project__viz">
             ${viz[p.viz]()}
             ${p.badge ? `<span class="project__badge">${esc(p.badge)}</span>` : ''}
@@ -150,7 +169,7 @@ export function caseStudyHTML(p) {
     .filter((l) => l.kind !== 'internal')
     .map(
       (l) =>
-        `<a class="lg-btn lg-btn--violet" href="${l.href}" target="_blank" rel="noopener noreferrer">${icon('github')} ${esc(l.label)}</a>`
+        `<a class="lg-btn lg-btn--violet" href="${l.href}" target="_blank" rel="noopener noreferrer">${linkIcon(l)} ${esc(l.label)}</a>`
     )
     .join('');
   return `
@@ -159,6 +178,7 @@ export function caseStudyHTML(p) {
     <p class="case__tagline">${esc(p.tagline)}</p>
     ${context}
     ${sections}
+    ${galleryHTML(p)}
     <div class="case__stack">${p.stack.map((s) => `<span class="chip">${esc(s)}</span>`).join('')}</div>
     ${links ? `<div class="case__actions">${links}</div>` : ''}`;
 }
