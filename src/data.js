@@ -401,7 +401,7 @@ export const timeline = [
 ];
 
 /* ---------- certificates (coastal clean-up intentionally excluded) ---------- */
-export const certCategories = { tech: 'Tech & Hackathons', lang: 'Languages', music: 'Music' };
+export const certCategories = { tech: 'Tech & Hackathons', initiative: 'Initiatives', lang: 'Languages', music: 'Music' };
 
 export const certificates = [
   {
@@ -429,6 +429,14 @@ export const certificates = [
     note: 'Certificate of participation, “Yet Another Team”.',
   },
   {
+    slug: 'geo-hack-2025',
+    cat: 'tech',
+    title: 'GEO HACK 1.0: Geospatial & GIS Hackathon',
+    issuer: 'IEEE GRSS Student Branch Chapter · SRM IST',
+    date: 'Oct 2025',
+    note: 'Certificate of participation. Organised with the Department of Computational Intelligence, School of Computing, SRM IST, Kattankulathur, on 22–23 October 2025.',
+  },
+  {
     slug: 'csc-python',
     cat: 'tech',
     title: 'Certificate Course in Python',
@@ -451,6 +459,22 @@ export const certificates = [
     issuer: 'Solve Ninja · Reap Benefit × Chettinad Sarvalokaa Education',
     date: '',
     note: 'Recognised as a Level 2 “Hands-On Hippo” on the Solve Ninja Public Problem Solving Index.',
+  },
+  {
+    slug: 'reduce-ewaste-pledge-2026',
+    cat: 'initiative',
+    title: 'Reduce E-Waste Pledge',
+    issuer: 'MeitY × MyGov · BRICS Sustainable Lifestyle Week 2026',
+    date: 'Nov 2026',
+    note: 'Certificate of pledge, “Reduce E-Waste: Towards a Sustainable and Greener Future”: reducing e-waste, encouraging repair and reuse, and recycling electronics through authorised channels.',
+  },
+  {
+    slug: 'nasa-roman-boarding-pass',
+    cat: 'initiative',
+    title: 'Boarding Pass: Nancy Grace Roman Space Telescope',
+    issuer: 'NASA',
+    date: '',
+    note: 'A boarding pass in my name for NASA’s Roman Space Telescope, an infrared survey observatory launching from Kennedy Space Center to Sun–Earth Lagrange Point 2 to study dark energy, dark matter and exoplanets.',
   },
   {
     slug: 'cambridge-b1',

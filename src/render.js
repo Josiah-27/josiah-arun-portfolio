@@ -5,7 +5,15 @@ import { viz } from './viz.js';
 export const esc = (s) =>
   String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
-const LANDSCAPE = new Set(['hacksprint-2026', 'bit-n-build-2026', 'sustain-agentic-bootcamp', 'hindustan-open-house']);
+const LANDSCAPE = new Set([
+  'hacksprint-2026',
+  'bit-n-build-2026',
+  'sustain-agentic-bootcamp',
+  'hindustan-open-house',
+  'geo-hack-2025',
+  'reduce-ewaste-pledge-2026',
+  'nasa-roman-boarding-pass',
+]);
 export const certSize = (slug) => (LANDSCAPE.has(slug) ? [640, 452] : [452, 640]);
 
 const chips = (items) =>
